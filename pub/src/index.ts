@@ -19,3 +19,5 @@ export * from "./algorithm_signatures/Refiner"
 export * from "./algorithm_signatures/Transformer"
 export * from "./algorithm_signatures/Serializer"
 export * from "./algorithm_signatures/Deserializer"
+
+export * from "./Deprecated_Source_Location"
