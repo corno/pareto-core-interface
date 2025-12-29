@@ -1,22 +1,18 @@
 {
-  "name": "exupery-core-types",
-  "version": "0.3.69",
+  "name": "pareto-core-interface",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "author": "Corno",
-  "description": "core types for Exupery",
+  "description": "core types needed to define an interface in the Pareto language",
   "keywords": [
-    "exupery",
-    "type system",
-    "Dictionary",
-    "Array",
-    "Async_Value",
-    "Optional_Value",
-    "Nested",
-    "Computed_Value"
+    "pareto",
+    "interface",
+    "data types",
+    "signatures"
   ],
-  "homepage": "https://github.com/corno/exupery-core#readme",
+  "homepage": "https://github.com/corno/pareto-core-interface#readme",
   "bugs": {
-    "url": "https://github.com/corno/exupery-core/issues"
+    "url": "https://github.com/corno/pareto-core/issues"
   },
   "types": "dist/index.d.ts",
   "files": [
@@ -24,6 +20,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/corno/exupery-core.git"
+    "url": "git+https://github.com/corno/pareto-core-interface.git"
   }
 }

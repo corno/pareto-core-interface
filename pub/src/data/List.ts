@@ -2,7 +2,7 @@ import { Dictionary } from "./Dictionary"
 import { Optional_Value } from "./Optional_Value"
 
 /**
- * An Exupery List.
+ * An List for Pareto.
  * unmutable and minimal by design
  */
 export interface List<T> {

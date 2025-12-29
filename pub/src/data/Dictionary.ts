@@ -7,7 +7,7 @@ export type Key_Value_Pair<T> = {
 }
 
 /**
- * A Exupery dictionary.
+ * A dictionary for Pareto.
  * unmutable and minimal by design
  */
 export interface Dictionary<T> {
