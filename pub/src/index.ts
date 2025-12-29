@@ -4,6 +4,8 @@ export * from "./data/Circular_Dependency"
 export * from "./data/Dictionary"
 export * from "./data/Optional_Value"
 
+export * from "./interfaces/Text_Builder"
+
 export * from "./algorithm_signatures/Command"
 export * from "./algorithm_signatures/Iterator"
 export * from "./algorithm_signatures/Query_Function"
