@@ -1,10 +1,6 @@
 import { List } from "./List"
 import { Optional_Value } from "./Optional_Value"
 
-export type Key_Value_Pair<T> = {
-    readonly 'key': string
-    readonly 'value': T
-}
 
 /**
  * A dictionary for Pareto.
