@@ -1,5 +1,5 @@
 import { Queryer } from "./Queryer"
-import { Deprecated_Refiner_Catcher } from "./Refinement_Result"
+import { Deprecated_Refiner_Catcher } from "../Deprecated_Refinement_Result"
 import { Transformer } from "./Transformer"
 
 //Shoutout to Reinout for helping me with the naming here :)

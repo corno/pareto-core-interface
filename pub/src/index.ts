@@ -20,3 +20,4 @@ export * from "./algorithm_signatures/Serializer"
 export * from "./algorithm_signatures/Deserializer"
 
 export * from "./Deprecated_Source_Location"
+export * from "./Deprecated_Refinement_Result"
