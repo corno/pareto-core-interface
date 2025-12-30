@@ -1,6 +1,6 @@
 import { Queryer } from "./Queryer"
-import { Deprecated_Refiner_Catcher } from "../Deprecated_Refinement_Result"
 import { Transformer } from "./Transformer"
+import { Abort } from "../abort"
 
 //Shoutout to Reinout for helping me with the naming here :)
 
@@ -18,7 +18,7 @@ export interface Query_Result<Output, Error> {
     query_without_error_transformation<New_Output>(
         query: Queryer<New_Output, Error, Output>
     ): Query_Result<New_Output, Error>
-    
+
     query<New_Output, Query_Error>(
         query: Queryer<New_Output, Query_Error, Output>,
         /**
@@ -27,12 +27,12 @@ export interface Query_Result<Output, Error> {
         error_transformer: Transformer<Query_Error, Error>,
     ): Query_Result<New_Output, Error>
 
-    deprecated_refine_old_without_error_transformation<New_Output>(
-        refiner: Deprecated_Refiner_Catcher<New_Output, Error, Output>
+    refine_without_error_transformation<New_Output>(
+        callback: ($: Output, abort: Abort<Error>) => New_Output,
     ): Query_Result<New_Output, Error>
-    
-    deprecated_refine_old<New_Output, Refiner_Error>(
-        refiner: Deprecated_Refiner_Catcher<New_Output, Refiner_Error, Output>,
+
+    refine<New_Output, Refiner_Error>(
+        callback: ($: Output, abort: Abort<Refiner_Error>) => New_Output,
         /**
          * if the refiner fails, rework its error into the desired error type
          */
