@@ -1,0 +1,5 @@
+
+export type Text_Builder = {
+    'add snippet': ($: string) => void
+    'add character': ($: number) => void
+}

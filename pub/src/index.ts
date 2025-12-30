@@ -6,6 +6,8 @@ export * from "./data/Optional_Value"
 
 export * from "./abort"
 
+export * from "./interfaces/Text_Builder"
+
 export * from "./algorithm_signatures/Command"
 export * from "./algorithm_signatures/Iterator"
 export * from "./algorithm_signatures/Query_Function"
