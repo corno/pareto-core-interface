@@ -11,6 +11,7 @@ export * from "./interfaces/Text_Builder"
 
 export * from "./algorithm_signatures/Command"
 export * from "./algorithm_signatures/Deserializer"
+export * from "./algorithm_signatures/Production"
 export * from "./algorithm_signatures/Query_Function"
 export * from "./algorithm_signatures/Query_Result"
 export * from "./algorithm_signatures/Query"
