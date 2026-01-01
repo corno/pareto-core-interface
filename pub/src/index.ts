@@ -6,10 +6,11 @@ export * from "./data/Optional_Value"
 
 export * from "./abort"
 
+export * from "./interfaces/Iterator"
 export * from "./interfaces/Text_Builder"
 
 export * from "./algorithm_signatures/Command"
-export * from "./algorithm_signatures/Iterator"
+export * from "./algorithm_signatures/Deserializer"
 export * from "./algorithm_signatures/Query_Function"
 export * from "./algorithm_signatures/Query_Result"
 export * from "./algorithm_signatures/Query"
@@ -17,7 +18,6 @@ export * from "./algorithm_signatures/Queryer"
 export * from "./algorithm_signatures/Refiner"
 export * from "./algorithm_signatures/Transformer"
 export * from "./algorithm_signatures/Serializer"
-export * from "./algorithm_signatures/Deserializer"
 
 export * from "./Deprecated_Source_Location"
 export * from "./Deprecated_Refinement_Result"
