@@ -11,32 +11,12 @@ export interface Query_Result<Output, Error> {
         transformer: Transformer<Output, New_Output>
     ): Query_Result<New_Output, Error>
 
-    deprecated_transform_error<New_Error>(
-        error_transformer: Transformer<Error, New_Error>,
-    ): Query_Result<Output, New_Error>
-
     query_without_error_transformation<New_Output>(
         query: Queryer<New_Output, Error, Output>
     ): Query_Result<New_Output, Error>
 
-    query<New_Output, Query_Error>(
-        query: Queryer<New_Output, Query_Error, Output>,
-        /**
-         * if the query fails, rework its error into the desired error type
-         */
-        error_transformer: Transformer<Query_Error, Error>,
-    ): Query_Result<New_Output, Error>
-
     refine_without_error_transformation<New_Output>(
         callback: ($: Output, abort: Abort<Error>) => New_Output,
-    ): Query_Result<New_Output, Error>
-
-    refine<New_Output, Refiner_Error>(
-        callback: ($: Output, abort: Abort<Refiner_Error>) => New_Output,
-        /**
-         * if the refiner fails, rework its error into the desired error type
-         */
-        error_transformer: Transformer<Refiner_Error, Error>,
     ): Query_Result<New_Output, Error>
 
     rework_error_temp<New_Error, Rework_Error>(
