@@ -1,4 +1,4 @@
-import { Abort } from "../abort"
+import { Abort } from "../interfaces/Abort"
 import { Iterator } from "../interfaces/Iterator"
 
 export type Production<Iterator_Element, Result, Error> = (

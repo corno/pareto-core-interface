@@ -1,4 +1,4 @@
-import { Abort } from "../abort"
+import { Abort } from "../interfaces/Abort"
 
 
 export type Refiner_With_Parameters<Result, Error, Input, Parameters> = (
