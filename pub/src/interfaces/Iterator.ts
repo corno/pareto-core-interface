@@ -1,8 +1,11 @@
 import { Optional_Value } from "../data/Optional_Value"
+import { Abort } from "./Abort"
 
 export type Iterator<Element> = {
-    'get current': () => Optional_Value<Element>,
+    'look': () => Optional_Value<Element>,
     'look ahead': (offset: number) => Optional_Value<Element>
-    'consume': () => void,
+    'consume': (
+        abort: Abort<null>
+    ) => Element,
     'get position': () => number,
 }
