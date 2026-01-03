@@ -1,5 +1,4 @@
 import { Abort } from "../interfaces/Abort"
-import { Non_Void } from "../interfaces/Non_Void"
 import { Optional_Value } from "./Optional_Value"
 
 /**
@@ -12,7 +11,7 @@ export interface List<T> {
      * @param handle_element callback to transform an individual entry.
      */
     map<NT>(
-        handle_element: ($: T) => Non_Void<NT>,
+        handle_element: ($: T) => NT,
     ): List<NT>
 
     filter<New_Type>(

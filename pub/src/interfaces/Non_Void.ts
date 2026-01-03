@@ -1,1 +1,0 @@
-export type Non_Void<T> = T extends void ? never : T

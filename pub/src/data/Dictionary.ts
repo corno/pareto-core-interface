@@ -1,5 +1,4 @@
 import { Abort } from "../interfaces/Abort"
-import { Non_Void } from "../interfaces/Non_Void"
 import { List } from "./List"
 import { Optional_Value } from "./Optional_Value"
 
@@ -14,7 +13,7 @@ export interface Dictionary<T> {
      * @param handle_entry callback to transform an individual entry. keys are not available.
      */
     map<NT>(
-        handle_entry: (value: T, key: string) => Non_Void<NT>,
+        handle_entry: (value: T, key: string) => NT,
     ): Dictionary<NT>
 
 
@@ -22,7 +21,7 @@ export interface Dictionary<T> {
      * the ordering of the list will be the same as the insertion order in the dictionary
      */
     to_list<New_Type>(
-        handle_entry: (value: T, key: string) => Non_Void<New_Type>
+        handle_entry: (value: T, key: string) => New_Type
     ): List<New_Type>
 
     /**
@@ -43,7 +42,7 @@ export interface Dictionary<T> {
     get_number_of_entries(): number
 
     filter<New_Type>(
-        handle_entry: (value: T, key: string) => Optional_Value<Non_Void<New_Type>>,
+        handle_entry: (value: T, key: string) => Optional_Value<New_Type>,
     ): Dictionary<New_Type>
 
     is_empty(): boolean
