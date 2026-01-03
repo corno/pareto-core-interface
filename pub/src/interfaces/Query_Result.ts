@@ -1,6 +1,6 @@
 import { Queryer } from "./Queryer"
-import { Transformer } from "./Transformer"
-import { Abort } from "../interfaces/Abort"
+import { Transformer } from "../algorithm_signatures/Transformer"
+import { Abort } from "./Abort"
 
 //Shoutout to Reinout for helping me with the naming here :)
 
