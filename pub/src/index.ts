@@ -21,5 +21,3 @@ export * from "./algorithm_signatures/Transformer"
 export * from "./algorithm_signatures/Serializer"
 
 export * from "./Deprecated_Source_Location"
-export * from "./Deprecated_Refinement_Result"
-export * from "./Deprecated_Key_Value_Pair"

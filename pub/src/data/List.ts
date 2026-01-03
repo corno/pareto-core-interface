@@ -2,7 +2,7 @@ import { Abort } from "../interfaces/Abort"
 import { Optional_Value } from "./Optional_Value"
 
 /**
- * An List for Pareto.
+ * A List for Pareto.
  * unmutable and minimal by design
  */
 export interface List<T> {
