@@ -18,7 +18,7 @@ export interface Optional_Value<T> {
     /**
      * 
      */
-    map<NT>( //this one should be called 'map'
+    map<NT>(
         set: ($: T) => NT,
     ): Optional_Value<NT>
 
