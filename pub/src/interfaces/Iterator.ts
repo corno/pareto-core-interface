@@ -7,5 +7,6 @@ export type Iterator<Element> = {
     'consume': (
         abort: Abort<null>
     ) => Element,
+    'discard': () => void,
     'get position': () => number,
 }

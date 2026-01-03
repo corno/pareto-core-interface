@@ -1,4 +1,5 @@
 import { Abort } from "../interfaces/Abort"
+import { Non_Void } from "../interfaces/Non_Void"
 import { Optional_Value } from "./Optional_Value"
 
 /**
@@ -11,11 +12,11 @@ export interface List<T> {
      * @param handle_element callback to transform an individual entry.
      */
     map<NT>(
-        handle_element: ($: T) => NT
+        handle_element: ($: T) => Non_Void<NT>,
     ): List<NT>
 
     filter<New_Type>(
-        handle_element: ($: T) => Optional_Value<New_Type>
+        handle_element: ($: T) => Optional_Value<New_Type>,
     ): List<New_Type>
 
     get_number_of_elements(): number
@@ -29,7 +30,7 @@ export interface List<T> {
     reverse(): List<T>
 
     flatten<New_Type>(
-        handle_element: ($: T) => List<New_Type>
+        handle_element: ($: T) => List<New_Type>,
     ): List<New_Type>
 
     __get_possible_element_at(index: number): Optional_Value<T>

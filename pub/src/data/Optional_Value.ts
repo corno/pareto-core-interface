@@ -1,3 +1,4 @@
+import { Non_Void } from "../interfaces/Non_Void"
 
 
 /**
@@ -12,16 +13,21 @@ export interface Optional_Value<T> {
      * @param not_set  what to do when the value was not set, returns the new type
      */
     transform<NT>(
-        set: ($: T) => NT,
-        not_set: () => NT,
+        set: ($: T) => Non_Void<NT>,
+        not_set: () => Non_Void<NT>,
     ): NT
     /**
      * 
      */
     map<NT>( //this one should be called 'map'
-        set: ($: T) => NT,
+        set: ($: T) => Non_Void<NT>,
     ): Optional_Value<NT>
 
     is_set(): boolean
+
+    _extract_data(
+        set: ($: T) => void,
+        not_set: () => void,
+    ): void
 
 }
