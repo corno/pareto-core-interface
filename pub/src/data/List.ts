@@ -1,4 +1,4 @@
-import { Dictionary } from "./Dictionary"
+import { Abort } from "../interfaces/Abort"
 import { Optional_Value } from "./Optional_Value"
 
 /**
@@ -32,7 +32,12 @@ export interface List<T> {
         handle_element: ($: T) => List<New_Type>
     ): List<New_Type>
 
-    __get_element_at(index: number): Optional_Value<T>
+    __get_possible_element_at(index: number): Optional_Value<T>
+    
+    __get_element_at(
+        index: number,
+        abort: Abort<null>
+    ): T
 
     __get_raw_copy(): readonly T[]
 

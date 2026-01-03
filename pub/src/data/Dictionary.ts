@@ -1,3 +1,4 @@
+import { Abort } from "../interfaces/Abort"
 import { List } from "./List"
 import { Optional_Value } from "./Optional_Value"
 
@@ -27,9 +28,14 @@ export interface Dictionary<T> {
      * 
      * @param key 
      */
-    get_entry(
+    get_possible_entry(
         key: string
     ): Optional_Value<T>
+
+    get_entry(
+        key: string,
+        abort: Abort<null>
+    ): T
 
     get_number_of_entries(): number
 
