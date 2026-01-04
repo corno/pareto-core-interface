@@ -1,7 +1,7 @@
 import { Abort } from "../interfaces/Abort"
 import { Iterator } from "../interfaces/Iterator"
 
-export type Production<Iterator_Element, Result, Error> = (
+export type Production<Result, Error, Iterator_Element> = (
     iterator: Iterator<Iterator_Element>,
     abort: Abort<Error>,
 ) => Result
