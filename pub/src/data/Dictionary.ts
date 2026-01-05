@@ -30,18 +30,14 @@ export interface Dictionary<T> {
      * 
      * @param key 
      */
-    get_possible_entry(
+    __get_possible_entry(
         key: string
     ): Optional_Value<T>
 
-    get_entry(
+    __get_entry(
         key: string,
         abort: Abort<null>
     ): T
 
     __get_number_of_entries(): number
-
-    filter<New_Type>(
-        handle_entry: (value: T, key: string) => Optional_Value<New_Type>,
-    ): Dictionary<New_Type>
 }
