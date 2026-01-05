@@ -4,10 +4,10 @@ import { Abort } from "./Abort"
 export type Iterator<Element> = {
     'look': () => Optional_Value<Element>,
     'look ahead': (offset: number) => Optional_Value<Element>
-    'consume': (
-        callback: <T>(value: Element, position: number) => T,
+    'consume': <T>(
+        callback: (value: Element, position: number) => T,
         abort: Abort<null>
-    ) => Element,
+    ) => T,
     'discard': <T>(
         callback: () => T
     ) => T,
