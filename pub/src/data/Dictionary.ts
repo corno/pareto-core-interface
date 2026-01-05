@@ -39,5 +39,5 @@ export interface Dictionary<T> {
         abort: Abort<null>
     ): T
 
-    ____get_number_of_entries(): number
+    __get_number_of_entries(): number
 }
