@@ -12,4 +12,8 @@ export type Iterator<Element> = {
         callback: () => T
     ) => T,
     'get position': () => number,
+    'assert finished': <T>(
+        callback: () => T,
+        abort: Abort<null>
+    ) => T
 }
