@@ -20,7 +20,7 @@ export interface Dictionary<T> {
     /**
      * the ordering of the list will be the same as the insertion order in the dictionary
      */
-    to_list<New_Type>(
+    __to_list<New_Type>(
         handle_entry: (value: T, key: string) => New_Type
     ): List<New_Type>
 
@@ -39,11 +39,9 @@ export interface Dictionary<T> {
         abort: Abort<null>
     ): T
 
-    get_number_of_entries(): number
+    __get_number_of_entries(): number
 
     filter<New_Type>(
         handle_entry: (value: T, key: string) => Optional_Value<New_Type>,
     ): Dictionary<New_Type>
-
-    is_empty(): boolean
 }

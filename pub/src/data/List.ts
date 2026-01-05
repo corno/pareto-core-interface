@@ -14,23 +14,7 @@ export interface List<T> {
         handle_element: ($: T) => NT,
     ): List<NT>
 
-    filter<New_Type>(
-        handle_element: ($: T) => Optional_Value<New_Type>,
-    ): List<New_Type>
-
-    get_number_of_elements(): number
-
-    is_empty(): boolean
-
-    append_element(new_element: T): List<T>
-
-    prepend_element(new_element: T): List<T>
-
-    reverse(): List<T>
-
-    flatten<New_Type>(
-        handle_element: ($: T) => List<New_Type>,
-    ): List<New_Type>
+    __get_number_of_elements(): number
 
     __get_possible_element_at(index: number): Optional_Value<T>
     
@@ -38,8 +22,6 @@ export interface List<T> {
         index: number,
         abort: Abort<null>
     ): T
-
-    __get_raw_copy(): readonly T[]
 
     /**
      * This method is only to be used by resources
@@ -50,5 +32,7 @@ export interface List<T> {
     __for_each(
         handle_element: ($: T) => void
     ): void
+
+    __get_raw_copy(): readonly T[]
 
 }

@@ -5,8 +5,11 @@ export type Iterator<Element> = {
     'look': () => Optional_Value<Element>,
     'look ahead': (offset: number) => Optional_Value<Element>
     'consume': (
+        callback: <T>(value: Element, position: number) => T,
         abort: Abort<null>
     ) => Element,
-    'discard': () => void,
+    'discard': <T>(
+        callback: () => T
+    ) => T,
     'get position': () => number,
 }
