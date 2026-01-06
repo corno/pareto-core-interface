@@ -6,7 +6,7 @@ export type Iterator<Element> = {
     'look ahead': (offset: number) => Optional_Value<Element>
     'consume': <T>(
         callback: (value: Element, position: number) => T,
-        abort: Abort<null>
+        abort: Abort<number>
     ) => T,
     'discard': <T>(
         callback: () => T
