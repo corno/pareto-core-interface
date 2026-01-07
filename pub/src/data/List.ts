@@ -1,4 +1,5 @@
 import { Abort } from "../interfaces/Abort"
+import { Raw_Optional_Value } from "../Raw_Optional_Value"
 import { Optional_Value } from "./Optional_Value"
 
 /**
@@ -22,6 +23,10 @@ export interface List<T> {
         index: number,
         abort: Abort<null>
     ): T
+ 
+    __get_element_at_raw(
+        index: number,
+    ): Raw_Optional_Value<T>
 
     /**
      * This method is only to be used by resources

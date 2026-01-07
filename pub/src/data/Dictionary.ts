@@ -1,4 +1,5 @@
 import { Abort } from "../interfaces/Abort"
+import { Raw_Optional_Value } from "../Raw_Optional_Value"
 import { List } from "./List"
 import { Optional_Value } from "./Optional_Value"
 
@@ -38,6 +39,10 @@ export interface Dictionary<T> {
         key: string,
         abort: Abort<null>
     ): T
+
+    __get_entry_raw(
+        key: string
+    ): Raw_Optional_Value<T>
 
     __get_number_of_entries(): number
 }
