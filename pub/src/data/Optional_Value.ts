@@ -11,20 +11,18 @@ export interface Optional_Value<T> {
      * @param set what to do when the value was set, returns the new type
      * @param not_set  what to do when the value was not set, returns the new type
      */
-    transform<NT>(
+    __decide<NT>(
         set: ($: T) => NT,
         not_set: () => NT,
     ): NT
-    /**
-     * 
-     */
-    map<NT>(
+
+    __o_map<NT>(
         set: ($: T) => NT,
     ): Optional_Value<NT>
 
-    is_set(): boolean
+    __is_set(): boolean
 
-    _extract_data(
+    __extract_data(
         set: ($: T) => void,
         not_set: () => void,
     ): void
