@@ -13,7 +13,7 @@ export interface Dictionary<T> {
      * 
      * @param handle_entry callback to transform an individual entry. keys are not available.
      */
-    map<NT>(
+    __d_map<NT>(
         handle_entry: (value: T, key: string) => NT,
     ): Dictionary<NT>
 

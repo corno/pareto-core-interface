@@ -1,6 +1,33 @@
-import { Queryer } from "./Queryer"
-import { Transformer } from "../algorithm_signatures/Transformer"
-import { Abort } from "./Abort"
+import { Optional_Value } from "./data/Optional_Value"
+import { Raw_Optional_Value } from "./Raw_Optional_Value"
+import { Transformer } from "./algorithm_signatures/Transformer"
+
+export type Abort<Error> = (error: Error) => never
+
+export type Acyclic_Lookup<Type> = null
+
+export type Cyclic_Lookup<Type> = null
+
+export type Iterator<Element> = {
+    'look': () => Raw_Optional_Value<Element>,
+    'look ahead': (offset: number) => Raw_Optional_Value<Element>
+    'consume': <T>(
+        callback: (value: Element, position: number) => T,
+        abort: Abort<number>
+    ) => T,
+    'discard': <T>(
+        callback: () => T
+    ) => T,
+    'get position': () => number,
+    'assert finished': <T>(
+        callback: () => T,
+        abort: Abort<null>
+    ) => T
+}
+
+export type Queryer<Output, Error, Input> = (
+    $: Input,
+) => Query_Result<Output, Error>
 
 //Shoutout to Reinout for helping me with the naming here :)
 
@@ -34,3 +61,9 @@ export interface Query_Result<Output, Error> {
 
 }
 
+export type Stack_Lookup<Type> = null
+
+export type Text_Builder = {
+    'add snippet': ($: string) => void
+    'add character': ($: number) => void
+}

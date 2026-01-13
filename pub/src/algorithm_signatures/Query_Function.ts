@@ -1,3 +1,2 @@
-import { Query } from "./Query"
 
 export type Query_Function<Query, Query_Resources> = ($q: Query_Resources) => Query

@@ -11,7 +11,7 @@ export interface List<T> {
      * 
      * @param handle_element callback to transform an individual entry.
      */
-    map<NT>(
+    __l_map<NT>(
         handle_element: ($: T) => NT,
     ): List<NT>
 
